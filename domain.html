@@ -25,23 +25,39 @@
             </nav>
             <main>
                 <section>
-                    <h2>3. Definisi dan Cara Kerja Nama Domain</h2>
-                    <p>Setiap website di internet sebenarnya diwakili oleh serangkaian angka yang disebut <strong>Alamat IP</strong> (misalnya, 100.90.80.70). Karena sangat tidak praktis bagi manusia untuk menghafal alamat-alamat numerik yang selalu berbeda ini, diciptakanlah Nama Domain.</p>
-                    <p><strong>Definisi:</strong> Nama Domain adalah alamat unik yang mudah diingat (misalnya, <code>hostinger.co.id</code>) yang digunakan sebagai pengganti Alamat IP.</p>
-                    <h3>Cara Kerja Nama Domain:</h3>
-                    <ol>
-                        <li><strong>Input Nama:</strong> Pengunjung mengetikkan Nama Domain (hostinger.co.id) di browser.</li>
-                        <li><strong>Penerjemahan IP:</strong> Domain ini akan diterjemahkan menjadi Alamat IP oleh DNS.</li>
-                        <li><strong>Pengarahan ke Server:</strong> Alamat IP tersebut digunakan komputer untuk menuju server dan meminta data website.</li>
-                        <li><strong>Fungsi Tambahan (Redirect):</strong> Domain dapat diatur untuk melakukan pengalihan (redirect) guna mengarahkan pengunjung dari URL yang salah ketik ke situs yang benar.</li>
-                    </ol>
+                    <h2>Definisi dan Cara Kerja Nama Domain</h2>
+                    <h3>1. Definisi dan Struktur Nama Domain</h3>
+                    <p>Nama Domain adalah alamat unik yang mudah diingat yang digunakan untuk mengidentifikasi suatu situs web atau server di Internet. Domain berfungsi sebagai pengganti bagi Alamat IP numerik yang rumit (misalnya, 104.26.4.103).</p>
+                    <ul>
+                        <li>Fungsi Utama: Domain diciptakan untuk memudahkan pengguna internet mengakses situs web tanpa perlu menghafal kombinasi angka Alamat IP yang panjang.</li>
+                        <li>Struktur Hierarki: Setiap domain terdiri dari beberapa bagian yang memiliki tingkatan:
+                            <ul>
+                                <li>TLD (Top-Level Domain): Bagian paling kanan atau ekstensi (e.g., .com, .org, .id).</li>
+                                <li>SLD (Second-Level Domain): Nama yang Anda pilih (nama brand atau situs Anda).</li>
+                                <li>Subdomain: Domain di bawah domain utama yang berdiri sendiri (e.g., blog pada blog.namadomain.com).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
                     <div class="image-container">
-                        <img src="images/domain.png" alt="Cara Kerja Domain" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Cara Kerja Domain</p>
+                        <img src="images/anatomi-domain.png" alt="Anatomi Nama Domain" loading="lazy">
+                        <p style="font-style: italic; font-size: 0.9em;">Anatomi Nama Domain (Subdomain + Domain + TLD), yang disebut dengan Fully Qualified Domain Name (FQDN).</p>
                     </div>
+
+                    <h3>2. Cara Kerja Domain (Keterkaitan dengan DNS)</h3>
+                    <p>Domain hanyalah label; agar berfungsi, ia harus diterjemahkan menjadi alamat numerik oleh DNS:</p>
+                    <ol>
+                        <li><strong>Input Domain:</strong> Anda mengetikkan nama domain (contoh.com) di browser.</li>
+                        <li><strong>Terjemahan (DNS Lookup):</strong> Browser mengirimkan permintaan ke DNS Server untuk mencari Alamat IP yang terikat pada domain tersebut.</li>
+                        <li><strong>Pengarahan ke Server:</strong> Alamat IP tersebut digunakan komputer untuk menuju server dan meminta data website.</li>
+                        <li><strong>Koneksi Server:</strong> Setelah Alamat IP ditemukan, browser Anda menggunakan alamat numerik tersebut untuk membuat koneksi langsung ke server yang menyimpan data situs web.</li>
+                    </ol>
+                    
                     <h3>Sumber Referensi:</h3>
                     <ul>
-                        <li><a href="https://www.hostinger.co.id/tutorial/apa-itu-domain" target="_blank">Hostinger: Apa itu Domain?</a></li>
+                        <li><a href="https://www.hostinger.co.id/tutorial/apa-itu-domain" target="_blank">Hostinger: Apa itu domain? Pengertian domain dan jenis-jenisnya</a></li>
+                        <li><a href="https://www.dicoding.com/blog/domain-adalah/" target="_blank">Dicoding: Pengertian, Anatomi, dan Jenis-Jenis Domain</a></li>
+                        <li><a href="https://idwebhost.com/blog/cara-kerja-sebuah-nama-domain/" target="_blank">IDwebhost: Cara Kerja Sebuah Nama Domain</a></li>
                     </ul>
                 </section>
             </main>

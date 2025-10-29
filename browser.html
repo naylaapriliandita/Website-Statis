@@ -25,18 +25,31 @@
             </nav>
             <main>
                 <section>
-                    <h2>6. Definisi dan Cara Kerja Browser Web</h2>
-                    <p>Peramban Web (<strong>Web Browser</strong>) adalah perangkat lunak aplikasi (seperti Google Chrome, Mozilla Firefox, atau Safari) yang menjadi antarmuka bagi pengguna untuk menjelajahi World Wide Web (WWW).</p>
-                    <h3>Cara Kerja Browser:</h3>
+                    <h2>Definisi dan Cara Kerja Browser Web</h2>
+                    <h3>1. Definisi Browser</h3>
+                    <p>Browser (Web Browser) adalah perangkat lunak (software) yang berfungsi sebagai antarmuka (interface) utama yang digunakan pengguna untuk mengakses, mencari, dan menampilkan informasi dari World Wide Web (WWW).</p>
+                    <ul>
+                        <li>Peran: Browser adalah Client dalam arsitektur Client-Server. Tugas utamanya adalah menerjemahkan kode-kode web yang kompleks (seperti HTML, CSS, dan JavaScript) menjadi tampilan visual yang mudah dilihat di layar Anda.</li>
+                        <li>Contoh: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.</li>
+                    </ul>
+
+                    <h3>2. Cara Kerja Browser:</h3>
+                    <p>Browser adalah titik akhir dari semua proses yang sudah kita bahas (Internet, DNS, HTTP/HTTPS). Ini adalah alur kerjanya secara ringkas:</p>
                     <ol>
-                        <li><strong>Input dan Permintaan IP:</strong> User mengetik URL. Browser mengambil Alamat IP dari DNS.</li>
-                        <li><strong>Akses Server:</strong> Browser menggunakan IP untuk menghubungi Server Web (Hosting).</li>
-                        <li><strong>Penerimaan Data:</strong> Server memberikan data konten (HTML, CSS, dan file lainnya).</li>
-                        <li><strong>Rendering Konten:</strong> Browser menggunakan mesin rendering-nya untuk memproses kode dan menampilkan hasil visual yang utuh kepada user.</li>
+                        <li><strong>Input dan Menerjemahkan Alamat:</strong> User mengetik URL. Browser memulai proses DNS Lookup untuk mengubah nama domain yang diketik menjadi Alamat IP server tujuan.</li>
+                        <li><strong>Akses Server:</strong>  Browser menggunakan IP untuk menghubungi Server Web (Hosting). Browser mengirimkan permintaan (request) ke server melalui protokol HTTP atau HTTPS.</li>
+                        <li><strong>Penerimaan Data:</strong> Browser menerima paket data respons dari server yang berisi file-file website (HTML, CSS, dan JavaScript). Jika menggunakan HTTPS, browser melakukan dekripsi data terlebih dahulu.</li>
+                        <li><strong>Rendering Konten:</strong> Browser menggunakan mesin rendering-nya untuk memproses kode dan menampilkan hasil visual yang utuh kepada user.
+                        <ul>
+                            <li>Membaca kode HTML untuk menentukan struktur halaman.</li>
+                            <li>Menerapkan gaya dan tata letak dari kode CSS.</li>
+                            <li>Menjalankan kode JavaScript melalui JavaScript Engine untuk membuat elemen interaktif.</li>
+                        </ul></li>
+                        <li><strong>Menampilkan Halaman:</strong> Browser menampilkan hasil akhir dari proses rendering sebagai halaman web utuh di layar Anda.</li>
                     </ol>
                     <div class="image-container">
                         <img src="images/browser.png" alt="Alur Kerja Browser" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Alur Kerja Browser</p>
+                        <p style="font-style: italic; font-size: 0.9em;">Alur kerja browser dari menerima URL hingga menampilkan halaman, termasuk proses DNS, dan Request/Response</p>
                     </div>
                     <h3>Sumber Referensi:</h3>
                     <ul>

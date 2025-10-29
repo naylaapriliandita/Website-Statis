@@ -25,23 +25,67 @@
             </nav>
             <main>
                 <section>
-                    <h2>4. Definisi dan Cara Kerja Hosting</h2>
-                    <p>Hosting Web adalah layanan yang menyediakan penyimpanan dan infrastruktur yang diperlukan agar sebuah situs web atau aplikasi dapat diakses secara online oleh pengguna di berbagai perangkat.</p>
-                    <p><strong>Konsep Server:</strong> Setiap website terdiri dari banyak file (gambar, kode, teks) yang harus disimpan di komputer khusus berkemampuan tinggi yang disebut <strong>Server</strong>. Penyedia layanan hosting bertugas memelihara, mengonfigurasi, dan menjalankan server fisik tersebut.</p>
-                    <h3>Cara Kerja Hosting Web:</h3>
+                    <h2>Definisi dan Cara Kerja Hosting</h2>
+                    <h3>1. Definisi Hosting</h3>
+                    <p>Hosting (atau Web Hosting) adalah layanan penyewaan ruang penyimpanan (space) pada komputer server yang memungkinkan semua file dan data (website Anda) untuk disimpan, diakses, dan diterbitkan secara online di Internet.</p>
+                    <ul>
+                        <li>Server: Server adalah komputer fisik berkinerja tinggi yang dioperasikan 24 jam sehari oleh penyedia hosting. Server ini menyediakan sumber daya (resource) seperti space penyimpanan (SSD/NVMe), RAM, dan CPU untuk menjalankan website Anda.</li>
+                        <li>Analogi: Jika Domain adalah alamat rumah Anda, maka Hosting adalah tanah dan bangunan tempat file-file website Anda tinggal. Keduanya harus dimiliki agar website dapat berfungsi penuh.</li>
+                    </ul>
+                    <h3>2. Cara Kerja Hosting</h3>
+                    <p>Cara kerja hosting sangat erat kaitannya dengan Domain dan DNS:</p>
                     <ol>
                         <li><strong>Alokasi Ruang:</strong> Penyedia hosting mengalokasikan ruang disk dan sumber daya (RAM, CPU) di servernya untuk file-file website Anda.</li>
                         <li><strong>Penyimpanan File:</strong> Semua file situs web (kode, gambar, teks) disimpan di server tersebut.</li>
-                        <li><strong>Pengiriman Respons:</strong> Ketika Domain Anda diakses, server hosting menerima permintaan dan mengirimkan file-file tersebut melalui internet ke browser pengunjung.</li>
+                        <li><strong>Pengarahan Alamat (via DNS):</strong> Ketika domain Anda diakses, DNS menerjemahkan domain tersebut menjadi Alamat IP server hosting Anda.</li>
+                        <li><strong>Pengiriman Respons:</strong> Browser pengunjung terhubung ke Alamat IP tersebut. Server hosting menerima permintaan dan mengirimkan file-file website tersebut melalui internet kembali ke browser.</li>
+                        <li><strong>Tampilan:</strong> Browser merender file yang diterima menjadi halaman web yang utuh.</li>
                     </ol>
+
                     <div class="image-container">
-                        <img src="images/hosting.png" alt="Cara Kerja Hosting" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Cara Kerja Hosting</p>
+                        <img src="images/hosting-web.png" alt="Cara Kerja Hosting" loading="lazy">
+                        <p style="font-style: italic; font-size: 0.9em;">Ilustrasi Cara Kerja Server Hosting sebagai pusat data yang menyimpan file website.</p>
                     </div>
+
+                    <h3>3. Jenis-jenis Hosting</h3>
+                    <p>Jenis hosting yang dipilih menentukan seberapa banyak sumber daya yang Anda terima. Ada lima jenis utama yang umum digunakan:</p>
+                    <ul>
+                        <li>Shared Hosting
+                            <ul>
+                                <li>Berbagi satu server fisik dan resource (RAM/CPU) dengan banyak website lain. Biaya paling murah.</li>
+                                <li>Cocok Untuk: Website pribadi, blog sederhana, startup baru.</li>
+                            </ul>
+                        </li>
+                        <li>Cloud Hosting
+                            <ul>
+                                <li>Website tersebar di jaringan banyak server (cloud), menawarkan skalabilitas instan dan uptime yang sangat tinggi.</li>
+                                <li>Cocok Untuk: Website besar, e-commerce, traffic tinggi.</li>
+                            </ul>
+                        </li>
+                        <li>VPS Hosting
+                            <ul>
+                                <li>Mendapat server virtual pribadi dengan resource yang dijamin (dedicated), meskipun berada di satu server fisik.</li>
+                                <li>Cocok Untuk: Website berkembang, pengembang yang butuh kontrol.</li>
+                            </ul>
+                        </li>
+                        <li>WordPress Hosting
+                            <ul>
+                                <li>Lingkungan server yang dioptimalkan khusus untuk performa dan keamanan WordPress.</li>
+                                <li>Cocok Untuk: Website yang menggunakan platform WordPress.</li>
+                            </ul>
+                        </li>
+                        <li>Dedicated Server Hosting
+                            <ul>
+                                <li>Menyewa seluruh server fisik secara eksklusif. Memberikan kontrol penuh dan performa maksimal.</li>
+                                <li>Cocok Untuk: Perusahaan besar, website dengan traffic masif.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
                     <h3>Sumber Referensi:</h3>
                     <ul>
-                        <li><a href="https://aws.amazon.com/what-is/web-hosting/" target="_blank">AWS: What is Web Hosting?</a></li>
-                        <li><a href="https://www.hostinger.com/tutorials/what-is-web-hosting" target="_blank">Hostinger: What is Web Hosting?</a></li>
+                        <li><a href="https://aws.amazon.com/what-is/web-hosting/" target="_blank">AWS: Apa itu Hosting Web?</a></li>
+                        <li><a href="https://www.hostinger.com/id/tutorial/apa-itu-web-hosting?utm_campaign=Generic-Tutorials-DSA-t1|NT:Se|LO:ID&utm_medium=ppc&gad_source=1&gad_campaignid=16000629991&gbraid=0AAAAADMy-hbYSPgbF14-MWkYJRhCGZqLF&gclid=CjwKCAjw04HIBhB8EiwA8jGNbfwxL7QlC0jzpwrr0qjPCBgYagrs94UQxKn1kyQ-RwrMF7bM-VNVtRoCaD8QAvD_BwE" target="_blank">Hostinger: Apa itu hosting web? Pengertian, fungsi, dan jenisnya</a></li>
                     </ul>
                 </section>
             </main>

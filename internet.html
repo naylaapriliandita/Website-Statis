@@ -25,20 +25,45 @@
             </nav>
             <main>
                 <section>
-                    <h2>1. Cara Kerja Internet Secara Umum</h2>
-                    <p>Cara kerja internet adalah proses kompleks yang memastikan permintaan dari perangkat Anda mencapai server yang tepat di seluruh dunia dan kembali lagi. Proses ini dimulai dari koneksi lokal Anda hingga tampilan halaman web.</p>
-                    <p><strong>Koneksi Awal:</strong> Untuk memulai, perangkat Anda (PC atau laptop) harus terhubung ke jaringan melalui router atau modem. Koneksi ini adalah gerbang pertama yang memungkinkan perangkat Anda berkomunikasi dengan dunia luar melalui ISP (Penyedia Layanan Internet).</p>
-                    <p><strong>Permintaan Awal dan Transfer ke ISP:</strong> Ketika Anda memasukkan alamat website (URL) di browser, sistem Anda mengirimkan perintah permintaan tersebut ke ISP yang terhubung. ISP Anda bertindak sebagai pusat penghubung, meneruskan permintaan Anda ke jaringan server yang lebih besar.</p>
-                    <p><strong>Pengambilan Alamat IP:</strong> Di sini, DNS (Domain Name System) mengambil peran. Browser menggunakan DNS untuk menerjemahkan URL yang Anda masukkan ke dalam format numerik yang unik, yaitu Alamat IP. Komputer dan server menggunakan Alamat IP ini untuk mengidentifikasi tujuan yang ingin Anda tuju.</p>
-                    <p><strong>Transfer Data (HTTP/S):</strong> Browser Anda kemudian mengirimkan permintaan menggunakan protokol HTTP atau HTTPS ke Alamat IP server tujuan. Server akan memproses permintaan tersebut dan mengirimkan kembali data situs web. Catatan: Data ini dikirim dalam bentuk unit-unit kecil yang disebut paket-paket kecil.</p>
-                    <p><strong>Penyusunan Konten (Rendering):</strong> Setelah semua paket kecil diterima oleh perangkat Anda, browser akan bekerja keras untuk mengatur ulang paket-paket tersebut. Seperti menyusun puzzle, browser mengumpulkan semua paket dan membentuknya menjadi file kolektif (HTML, CSS, gambar). Setelah lengkap, konten situs web pun ditampilkan di layar Anda.</p>
+                    <h2>Cara Kerja Internet Secara Umum</h2>
+                    <h3>1. Definisi dan Konsep Dasar</h3>
+                    <p>Internet adalah jaringan komputer global yang saling terhubung (dikenal juga sebagai Interconnected Network). Jaringan raksasa ini memungkinkan miliaran perangkat untuk berkomunikasi dan berbagi informasi. Seluruh mekanisme ini diatur oleh seperangkat aturan yang disebut Protokol, dengan TCP/IP (Transmission Control Protocol/Internet Protocol) sebagai "bahasa universal" internet </p> 
+                    <p>Penting untuk membedakan antara Internet dan World Wide Web (WWW). Internet adalah infrastruktur fisik dan protokol yang mendasarinya (kabel serat optik dan router), sedangkan WWW adalah salah satu layanan yang berjalan di atasnya (kumpulan halaman web, dokumen, dan media yang diakses melalui browser).</p>
+                    <p>Infrastruktur internet tidak hanya terdiri dari sinyal nirkabel. Sebagian besar koneksi global didukung oleh kabel serat optik yang membentang di bawah laut dan di darat, menjadikannya sebuah jaringan fisik masif yang menghubungkan benua-benua.</p>
+                    <div class="image-container">
+                        <img src="images/kabeloptik.png" alt="Gambar peta kabel serat optik bawah laut" loading="lazy">
+                        <p style="font-style: italic; font-size: 0.9em;">Ilustrasi sistem jaringan kabel bawah laut yang melintasi Indonesia.(Submarinecablemap.com)</p>
+                    </div>
+
+                    <h3>2. Komponen Kunci</h3>
+                    <p>Cara kerja internet melibatkan interaksi antara beberapa komponen utama:</p>
+                    <ul>
+                        <li><strong>Client (Klien):</strong> Perangkat Anda (laptop atau smartphone) yang meminta data.</li>
+                        <li><strong>Server:</strong> Komputer kuat yang menyimpan data (halaman web, file) dan memberikan respons.</li>
+                        <li><strong>Router & Modem:</strong> Perangkat yang berfungsi sebagai pengarah lalu lintas data, menentukan jalur terbaik agar paket data sampai ke tujuan antar jaringan.</li>
+                        <li><strong>DNS Server (Domain Name System):</strong> Bertugas menerjemahkan nama domain (contoh.com) menjadi Alamat IP numerik.</li>
+                        <li><strong>ISP (Internet Service Provider):</strong> Perusahaan yang menyediakan koneksi ke jaringan global.</li>
+                    </ul>           
+
+                    <h3>3. Alur Kerja Umum (Saat Memuat Halaman Web)</h3>
+                    <p>Proses dari mengetik URL hingga melihat halaman web adalah serangkaian langkah yang diatur oleh protokol TCP/IP:</p>
+                    <ol>
+                        <li><strong>Inisiasi dan Penerjemahan:</strong> Anda mengetik URL. Sebelum permintaan dikirim, browser harus mengetahui alamat IP server. Inilah saatnya DNS Server bekerja, mengubah URL menjadi alamat numerik.</li>
+                        <li><strong>Pembentukan Paket:</strong> Protokol TCP memecah permintaan (dan semua data) menjadi unit kecil yang disebut paket data. Setiap paket diberi header (kepala) yang berisi Alamat IP asal dan tujuan.</li>
+                        <li><strong>Pengiriman dan Routing:</strong> Paket-paket ini dilepaskan ke jaringan. Protokol IP memastikan setiap paket diidentifikasi dengan benar, dan Router mengarahkan paket ini dari satu jaringan ke jaringan berikutnya hingga mencapai Server tujuan. Paket yang berbeda bahkan dapat mengambil jalur yang berbeda.</li>
+                        <li><strong>Respons dan Reassembly (Penyusunan Ulang):</strong> Server memproses permintaan dan mengirimkan data halaman web sebagai paket balasan. Ketika paket-paket tersebut tiba di perangkat Anda, protokol TCP bertugas memastikan semua paket diterima dan menyusunnya kembali secara berurutan.</li>
+                        <li><strong>Tampilan:</strong> Browser menerima data yang sudah utuh dan menampilkannya sebagai halaman web</li>
+                    </ol>
+                    
                     <div class="image-container">
                         <img src="images/internetworks.png" alt="Alur Cara Kerja Internet Umum" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Alur Cara Kerja Internet Umum</p>
+                        <p style="font-style: italic; font-size: 0.9em;">Ilustrasi alur sederhana dari Client (Komputer) yang mengirim permintaan melalui Internet (awan) ke Server dan menerima balasan.</p>
                     </div>
                     <h3>Sumber Referensi:</h3>
                     <ul>
                         <li><a href="https://www.geeksforgeeks.org/how-does-the-internet-work/" target="_blank">GeeksforGeeks: How does the Internet Work?</a></li>
+                        <li><a href="https://www.cloudflare.com/learning/network-layer/how-does-the-internet-work/" target="blank">Cloudflare: How does the Internet Work?</a></li>
+                        <li><a href="https://tekno.kompas.com/read/2020/10/03/19030037/mengenal-jaringan-kabel-bawah-laut-jalan-tol-internet-dunia?page=all" target="blank">Kompas: Mengenal Jaringan Kabel Bawah Laut, Jalan Tol Internet Dunia</a></li>
                     </ul>
                 </section>
             </main>

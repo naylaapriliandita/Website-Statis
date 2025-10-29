@@ -25,23 +25,58 @@
             </nav>
             <main>
                 <section>
-                    <h2>2. Definisi dan Cara Kerja HTTP dan HTTPS</h2>
-                    <h3>HyperText Transfer Protocol (HTTP)</h3>
-                    <p>HTTP adalah fondasi dari World Wide Web dan merupakan serangkaian aturan untuk mentransfer file hiperteks (dokumen yang mengandung teks, gambar, video, dan tautan) antara web client (browser) dan web server.</p>
-                    <p><strong>Alur Kerja Khas HTTP:</strong> Klien meminta URL, DNS menerjemahkan ke IP, browser mengirim Permintaan HTTP (GET atau POST), dan server mengembalikan Tanggapan HTTP (misalnya, 200 OK) berisi file-file yang diminta, yang kemudian dirender oleh browser.</p>
-                    <p><strong>Keterbatasan:</strong> HTTP tidak menyediakan keamanan. Semua data ditransmisikan dalam bentuk teks biasa (plain text) dan tidak dienkripsi. Hal ini membuat informasi sensitif rentan dicuri saat data dipecah menjadi paket selama perjalanan di jaringan.</p>
-                    <h3>HyperText Transfer Protocol Secure (HTTPS)</h3>
-                    <p>HTTPS adalah versi HTTP yang lebih aman dan rahasia, menggunakan protokol kriptografi seperti <strong>TLS (Transport Layer Security)</strong> untuk mengenkripsi data.</p>
-                    <p><strong>Cara Kerja Keamanan:</strong> Setiap paket data dienkripsi menggunakan algoritma Kunci Asimetris (PKI), yang terdiri dari dua kunci yang saling berhubungan: <strong>Kunci Publik</strong> (untuk mengenkripsi) dan <strong>Kunci Privat</strong> (hanya dimiliki server, untuk mendekripsi).</p>
-                    <p><strong>Jabat Tangan (Handshake) TLS/SSL:</strong> Sebelum transfer data, klien dan server melalui proses Jabat Tangan TLS/SSL di mana mereka bertukar Sertifikat TLS/SSL yang berisi Kunci Publik, memastikan sesi komunikasi yang aman dan terotentikasi dibangun. Ini ditandai dengan ikon gembok di browser.</p>
+                    <h2>Definisi dan Cara Kerja HTTP dan HTTPS</h2>
+                    <h3>1. Definisi Hypertext Transfer Protocol (HTTP)</h3>
+                    <p>HTTP (Hypertext Transfer Protocol) adalah protokol lapisan aplikasi (lapisan tertinggi dalam model OSI) yang menjadi tulang punggung dari World Wide Web (WWW).</p>
+                    <p>Secara sederhana, HTTP adalah seperangkat aturan yang menentukan bagaimana Client (yaitu browser Anda) dan Server berkomunikasi untuk mentransfer hypertext (konten web seperti teks, gambar, atau video).</p>
+                    <ul>
+                        <li>Sifat Dasar: HTTP bersifat stateless, artinya server tidak menyimpan informasi atau status interaksi sebelumnya dari klien.</li>
+                        <li>Port Standar: Secara default, HTTP menggunakan Port 80.</li>
+                        <li>Keamanan: Data yang ditransfer melalui HTTP dikirimkan dalam bentuk plaintext (teks biasa) tanpa enkripsi. Hal ini membuat data rentan disadap dan dibaca oleh pihak ketiga saat transit melalui jaringan.</li>
+                    </ul>
+                    <h3>2. Cara Kerja HTTP</h3>
+                    <p>Cara kerja HTTP mengikuti model permintaan-respons (request-response) sederhana:</p>
+                    <ol>
+                        <li><strong>Koneksi:</strong> Klien (browser) membuat koneksi TCP/IP ke Server (biasanya melalui Port 80).</li>
+                        <li><strong>Permintaan (Request):</strong> Klien mengirimkan pesan permintaan HTTP (misalnya, HTTP GET untuk meminta halaman) ke Server.</li>
+                        <li><strong>Respons (Response):</strong> Server memproses permintaan tersebut.</li>
+                        <li><strong>Pengiriman Data:</strong> Server mengirimkan data yang diminta (misalnya, file HTML) kembali ke klien, disertai dengan Kode Status (misalnya, 200 OK yang berarti berhasil).</li>
+                        <li><strong>Penutupan Koneksi:</strong> Server kemudian menutup sambungan TCP/IP.</li>
+                    </ol>
+
                     <div class="image-container">
-                        <img src="images/http.png" alt="Gambar HTTP" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Gambar HTTP</p>
+                        <img src="images/httpvshttps.png" alt="Perbedaan HTTP vs HTTPS" loading="lazy">
+                        <p style="font-style: italic; font-size: 0.9em;">Ilustrasi browser dan server terhubung: di HTTP, data digambarkan  teks terbuka (plaintext); di sisi HTTPS, data digambarkan sebagai teks acak (terenkripsi) di dalam tunnel aman.</p>
+                    </div>
+
+                    <h3>3. Definisi Hypertext Transfer Protocol Secure (HTTPS)</h3>
+                    <p>HTTPS (Hypertext Transfer Protocol Secure) adalah perpanjangan dari HTTP yang menambahkan lapisan keamanan. Huruf 'S' pada HTTPS berarti Secure (Aman).</p>
+                    <p>HTTPS mengatasi kelemahan utama HTTP dengan menggunakan protokol keamanan SSL (Secure Sockets Layer) atau penerusnya, TLS (Transport Layer Security), untuk mengenkripsi data yang ditransfer antara browser dan server.</p>
+                    <ul>
+                        <li>Port Standar: HTTPS menggunakan Port 443.</li>
+                        <li>Keamanan: Semua data dikirimkan dalam bentuk terenkripsi, menjadikannya tidak dapat dibaca oleh penyadap, sehingga melindungi informasi sensitif (seperti detail login atau kartu kredit) dari serangan Man-in-the-Middle (MITM).</li>
+                    </ul>
+
+                    <h2>4. Cara Kerja HTTPS (Peran SSL/TLS)</h2>
+                    <p>Proses HTTPS sedikit lebih kompleks karena melibatkan verifikasi dan enkripsi, yang dikenal sebagai TLS Handshake:</p>
+                    <ol>
+                        <li><strong>Permintaan Sertifikat:</strong> Saat Anda mengunjungi situs HTTPS, browser Anda meminta Server untuk mengidentifikasi dirinya.</li>
+                        <li><strong>Verifikasi (Handshake):</strong> Server merespons dengan mengirimkan Sertifikat SSL/TLS yang berisi Kunci Publik server. Browser kemudian memverifikasi sertifikat ini dengan otoritas sertifikasi.</li>
+                        <li><strong>Enkripsi Sesi:</strong> Setelah verifikasi berhasil, browser dan server menggunakan Kunci Publik dan Kunci Privat untuk menyepakati Kunci Sesi yang unik. Kunci sesi inilah yang akan digunakan untuk mengenkripsi dan mendekripsi semua data yang dipertukarkan selama sesi tersebut.</li>
+                        <li><strong>Transfer Data:</strong> Barulah data permintaan dan respons (yang kini terenkripsi) dikirim melalui koneksi aman.</li>
+                    </ol>
+
+                    <div class="image-container">
+                        <img src="images/ssl-tls.png" alt="TLS/SSL Handshake" loading="lazy">
+                        <p style="font-style: italic; font-size: 0.9em;">Ilustrasi pertukaran sertifikat dan kunci antara Client dan Server untuk membangun koneksi aman.</p>
                     </div>
                     <h3>Sumber Referensi:</h3>
                     <ul>
-                        <li><a href="https://www.freecodecamp.org/news/what-is-https-http-vs-https-meaning-and-how-it-works/" target="_blank">freeCodeCamp: What is HTTPS?</a></li>
-                        <li><a href="https://www.geeksforgeeks.org/difference-between-http-and-https/" target="_blank">GeeksforGeeks: Difference between HTTP and HTTPS</a></li>
+                        <li><a href="https://www.jagoanhosting.com/blog/http-adalah/" target="_blank">Pengertian HTTP, Fungsi, Cara Kerja & Bedanya dari HTTPS</a></li>
+                        <li><a href="https://aws.amazon.com/id/compare/the-difference-between-https-and-http/">AWS: Apa Perbedaan Antara HTTP dan HTTPS?</a></li>
+                        <li><a href="https://cloudraya.com/id/cloud-insight-id/pengertian-http/">CloudRaya: Mengulas Pengertian HTTP, Fungsi, Serta Cara Kerjanya</a></li>
+                        <li><a href="https://www.hostinger.com/id/tutorial/perbedaan-http-dan-https">Hostinger: Perbedaan HTTP dan HTTPS serta pengertiannya</a></li>
+                        <li><a href="https://cheapsslweb.com/blog/ssl-tls-handshake-explained-process-work-and-importance/">cheapsslweb.com: SSL/TLS Handshake Explained: Process, Work and Importance</a></li>
                     </ul>
                 </section>
             </main>

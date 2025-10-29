@@ -25,23 +25,28 @@
             </nav>
             <main>
                 <section>
-                    <h2>5. Definisi dan Cara Kerja DNS (Domain Name System)</h2>
-                    <p>DNS adalah Sistem Nama Domain <strong>buku telepon utama Internet</strong>. DNS bertugas menerjemahkan nama domain (yang mudah diingat manusia, seperti <code>nytimes.com</code>) menjadi Alamat IP (yang dipahami peramban), sehingga memungkinkan browser memuat sumber daya Internet. Tanpa DNS, kita harus menghafal Alamat IP yang rumit untuk setiap situs.</p>
-                    <h3>Cara Kerja Server DNS (Resolusi Nama Domain):</h3>
+                    <h2>Definisi dan Cara Kerja DNS (Domain Name System)</h2>
+                    <h3>1. Definisi DNS</h3>
+                    <p>DNS (Domain Name System) adalah sistem terdistribusi hierarkis yang bertugas menerjemahkan nama domain yang dapat dibaca manusia (contoh.com) menjadi Alamat IP numerik (142.250.71.100).</p>
+                    <ul>
+                        <li>Fungsi Utama: DNS adalah "Buku Telepon Digital" Internet yang menghubungkan Domain (alamat) dengan Hosting (lokasi fisik Server).</li>
+                    </ul>
+                    <h2>2. Cara Kerja DNS:</h2>
+                    <p>Proses pencarian Alamat IP oleh DNS dikenal sebagai DNS Lookup:</p>
                     <ol>
-                        <li><strong>Permintaan DNS:</strong> Pengguna mengetik domain, dan perangkat mengirimkan permintaan ke DNS Resolver.</li>
-                        <li><strong>Pencarian Hierarkis:</strong> Resolver kemudian mencari IP melalui hierarki: Server Root → Server TLD → Server DNS Otoritatif.</li>
-                        <li><strong>Mengirim Balasan:</strong> Server Otoritatif mengirimkan Alamat IP yang benar kembali ke resolver.</li>
-                        <li><strong>Akses Server:</strong> Resolver mengirimkan IP tersebut ke perangkat pengguna, yang menggunakannya untuk menghubungi server tujuan (Hosting).</li>
+                        <li><strong>Permintaan (DNS Request):</strong> Pengguna mengetik domain, dan perangkat mengirimkan permintaan ke DNS Resolver.</li>
+                        <li><strong>Resolusi Nama Domain:</strong> DNS resolver mencari alamat IP yang sesuai dengan nama domain tersebut. Jika alamat IP tidak ditemukan di server resolver, maka permintaan akan diteruskan ke Root DNS Server.</li>
+                        <li><strong>Pencarian Hierarkis:</strong> Root DNS Server  mengarahkan permintaan ke Top-Level Domain (TLD) Server, misalnya server .com atau .org. TLD Server lalu mengarahkan permintaan ke Authoritative DNS Server yang memiliki data lengkap tentang nama domain tersebut.</li>
+                        <li><strong>Mengirim Balasan ke Resolver:</strong> Setelah mendapatkan alamat IP dari Authoritative DNS Server, DNS resolver akan mengirimkan alamat IP tersebut kembali ke perangkat pengguna.</li>
+                        <li><strong>Akses Situs:</strong> Dengan alamat IP yang didapatkan, perangkat kemudian dapat menghubungi server tujuan dan menampilkan konten situs web yang diinginkan.</li>
                     </ol>
                     <div class="image-container">
                         <img src="images/dns.png" alt="Cara Kerja DNS" loading="lazy">
-                        <p style="font-style: italic; font-size: 0.9em;">Cara Kerja DNS</p>
+                        <p style="font-style: italic; font-size: 0.9em;">Cara Kerja DNSCara Kerja DNS Lookup (secara mendalam). Ilustrasi yang menunjukkan alur permintaan dari Browser, DNS Resolver, Server Root, TLD Server, Server Otoritatif, Kembali ke Browser.</p>
                     </div>
                     <h3>Sumber Referensi:</h3>
                     <ul>
-                        <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/" target="_blank">Cloudflare: What is DNS?</a></li>
-                        <li><a href="https://bif.telkomuniversity.ac.id/apa-itu-dns/" target="_blank">BIF Telkom University: What is DNS?</a></li>
+                        <li><a href="https://bif.telkomuniversity.ac.id/apa-itu-dns/" target="_blank">BIF Telkom University: DNS Server Adalah: Pengertian, Cara Kerja dan Fungsinya</a></li>
                         <li><a href="https://www.hostinger.com/tutorials/what-is-dns" target="_blank">Hostinger: What is DNS?</a></li>
                     </ul>
                 </section>
